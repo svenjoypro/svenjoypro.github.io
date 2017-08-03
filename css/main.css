@@ -15,6 +15,7 @@ textarea {resize: vertical;}
    ========================================================================== */
 
 /* ================================== NAV =================================== */
+
 body {
     padding-left: 50px;
     background-color: #FCFCFC;
@@ -59,12 +60,11 @@ nav {
 
 .hero {
     width: 100%;
-    height: calc(100vh - 80px);
+    height: 100vh;
     display: flex;
     background-color: #f5f5f5;
     justify-content: center;
     align-items: center;
-
     font-family: "Montserrat", sans-serif;
 }
 
@@ -108,7 +108,7 @@ h1 {
 
 
 
-body > section, .quirks {
+body > section {
     width: 90%;
     max-width: 960px;
     margin: 0 auto;
@@ -121,13 +121,21 @@ body > section, .quirks {
 }
 
 .quirks {
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    max-width: 960px;
+    margin: 0 auto;
     height: 80px;
     line-height: 80px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    
     text-transform: uppercase;
     font-family: "Montserrat", sans-serif;
 }
+
 .quirks i {
     font-size: 1.2rem;
     padding-right: .5rem;
@@ -218,7 +226,13 @@ footer {
 /* ==========================================================================
    Media Queries
    ========================================================================== */
-
+@media only screen and (max-width: 720px) {
+    .quirks div {
+        text-align: center;
+        padding: 0 20px;
+        line-height: 1.2rem;
+    }
+}
 @media only screen and (max-width: 675px) {
     .quirks {
         font-size: .8rem;
