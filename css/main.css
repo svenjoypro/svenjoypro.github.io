@@ -31,11 +31,15 @@ nav {
     top: 0;
     
     height: 100vh;
-    background-color: #222222;
+    
 }
 .nav-links-container {
+    background-color: #222222;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    z-index: 999;
+    height: 100vh;
 }
 
 .nav-links-container > a {
@@ -56,6 +60,45 @@ nav {
 .nav-links-container > a:hover {
     background-color: #3581c2;
     /*384e61*/
+}
+
+.nav-links-container > a.menu-button {
+    cursor: pointer;
+    display: none;
+}
+
+.mobile-nav {
+    position: absolute;
+    left: 0px;
+    display: none;
+    top: -100vh;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(255,255,255,.98);
+    transition: top .7s;
+    z-index: 998;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-nav ul {
+    margin: 50px 0 0 0;
+    padding: 0;
+}
+
+.mobile-nav li {
+    list-style: none;
+    font-size: 2rem;
+    padding: 7px 14px;
+    border: 4px solid transparent;
+    width: 200px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.mobile-nav li:hover {
+    border: 4px solid #212121;
 }
 
 .hero {
@@ -275,12 +318,18 @@ footer {
     nav {
         width: 100vw;
         height: 50px;
-
     }
     .nav-links-container {
         flex-direction: row;
         justify-content: center;
         width: 100vw;
+        height: auto;
+    }
+    .nav-links-container > a.menu-button {
+        display: flex;
+    }
+    .mobile-nav {
+        display: flex;
     }
     body {
         padding-left: 0;
